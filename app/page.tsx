@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BookingWidget from "@/components/BookingWidget";
 import { hotelImages, site, whatsappUrl } from "@/lib/site";
 
 const roomPreviews = [
@@ -48,7 +49,8 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section className="relative min-h-[760px] overflow-hidden bg-[#211512] pt-20 lg:min-h-screen">
+        <BookingWidget />
+        <section className="relative min-h-[760px] overflow-hidden bg-[#211512] lg:min-h-[calc(100vh-5rem)]">
           <Image
             src={hotelImages.deluxe}
             alt="Refined guest room at JAVIN Hotels"
@@ -60,7 +62,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(22,12,10,.88)_0%,rgba(22,12,10,.58)_44%,rgba(22,12,10,.18)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#211512] to-transparent" />
 
-          <div className="relative mx-auto flex min-h-[680px] max-w-[1380px] items-center px-5 py-20 md:px-10 lg:min-h-[calc(100vh-5rem)] lg:px-14">
+          <div className="relative mx-auto flex min-h-[760px] max-w-[1380px] items-center px-5 py-20 md:px-10 lg:min-h-[calc(100vh-5rem)] lg:px-14">
             <div className="max-w-3xl text-white">
               <div className="mb-7 flex items-center gap-4">
                 <span className="h-px w-12 bg-[#d7ad58]" />

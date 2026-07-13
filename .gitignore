@@ -42,3 +42,5 @@ next-env.d.ts
 
 # design-source references (not required by the application)
 /stitch_edvee_hotel_digital_experience/
+
+.vercel
