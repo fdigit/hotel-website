@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-surface: #fbf9f4;
+  --color-surface-dim: #dbdad5;
+  --color-surface-bright: #fbf9f4;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3ee;
+  --color-surface-container: #f0eee9;
+  --color-surface-container-high: #eae8e3;
+  --color-surface-container-highest: #e4e2dd;
+  --color-on-surface: #1b1c19;
+  --color-on-surface-variant: #584141;
+  --color-inverse-surface: #30312e;
+  --color-inverse-on-surface: #f2f1ec;
+  --color-outline: #8c7071;
+  --color-outline-variant: #e0bfbf;
+  --color-surface-tint: #af2b3e;
+  --color-primary: #570013;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #800020;
+  --color-on-primary-container: #ff828a;
+  --color-inverse-primary: #ffb3b5;
+  --color-secondary: #735c00;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fed65b;
+  --color-on-secondary-container: #745c00;
+  --color-tertiary: #282727;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #3e3d3d;
+  --color-on-tertiary-container: #aaa8a7;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #ffdada;
+  --color-primary-fixed-dim: #ffb3b5;
+  --color-on-primary-fixed: #40000b;
+  --color-on-primary-fixed-variant: #8e0f28;
+  --color-secondary-fixed: #ffe088;
+  --color-secondary-fixed-dim: #e9c349;
+  --color-on-secondary-fixed: #241a00;
+  --color-on-secondary-fixed-variant: #574500;
+  --color-tertiary-fixed: #e5e2e1;
+  --color-tertiary-fixed-dim: #c8c6c5;
+  --color-on-tertiary-fixed: #1c1b1b;
+  --color-on-tertiary-fixed-variant: #474746;
+  --color-background: #fbf9f4;
+  --color-on-background: #1b1c19;
+  --color-surface-variant: #e4e2dd;
+
+  /* Fonts */
+  --font-headline-lg: var(--font-playfair);
+  --font-headline-md: var(--font-playfair);
+  --font-display-lg: var(--font-playfair);
+  --font-display-lg-mobile: var(--font-playfair);
+  --font-body-lg: var(--font-jakarta);
+  --font-body-md: var(--font-jakarta);
+  --font-label-lg: var(--font-jakarta);
+  --font-label-sm: var(--font-jakarta);
+
+  /* Font Sizes */
+  --text-display-lg: 64px;
+  --text-display-lg--line-height: 72px;
+  --text-display-lg--letter-spacing: -0.02em;
+
+  --text-display-lg-mobile: 40px;
+  --text-display-lg-mobile--line-height: 48px;
+
+  --text-headline-lg: clamp(2rem, 5vw, 3rem);
+  --text-headline-lg--line-height: 1.17;
+
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 40px;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--letter-spacing: 0.05em;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+
+  /* Spacing */
+  --spacing-unit: 8px;
+  --spacing-container-max: 1280px;
+  --spacing-gutter: 24px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-desktop: clamp(20px, 5vw, 64px);
+  --spacing-section-gap: clamp(64px, 8vw, 120px);
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-lg: 0.5rem; /* Stitch set lg to 0.5rem in config, 1rem in DESIGN.md, I'll use 0.5rem */
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom Styles */
+@layer utilities {
+  .nav-glass {
+    background: rgba(251, 249, 244, 0.9);
+    backdrop-filter: blur(12px);
+  }
+  .luxury-shadow {
+    box-shadow: 0 10px 30px -10px rgba(87, 0, 19, 0.05);
+  }
+  .hero-gradient {
+    background: linear-gradient(to bottom, rgba(87, 0, 19, 0.4), rgba(27, 28, 25, 0.8));
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-on-background);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+img, video, iframe, button, input, select, textarea {
+  max-width: 100%;
+}
+
+p, a {
+  overflow-wrap: anywhere;
+}
+
+a, button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #d6b162;
+  color: #24130f;
+}
+
+:focus-visible {
+  outline: 2px solid #b38837;
+  outline-offset: 3px;
 }
