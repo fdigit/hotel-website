@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingWidget from "@/components/BookingWidget";
+import Reveal from "@/components/Reveal";
 import { hotelImages, site, whatsappUrl } from "@/lib/site";
 
 const roomPreviews = [
@@ -49,7 +50,6 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <BookingWidget />
         <section className="relative min-h-[760px] overflow-hidden bg-[#211512] lg:min-h-[calc(100vh-5rem)]">
           <Image
             src={hotelImages.deluxe}
@@ -57,12 +57,12 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="animate-ken-burns object-cover object-center"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(22,12,10,.88)_0%,rgba(22,12,10,.58)_44%,rgba(22,12,10,.18)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#211512] to-transparent" />
 
-          <div className="relative mx-auto flex min-h-[760px] max-w-[1380px] items-center px-5 py-20 md:px-10 lg:min-h-[calc(100vh-5rem)] lg:px-14">
+          <div className="relative mx-auto flex min-h-[760px] max-w-[1380px] items-center px-5 pt-20 pb-28 md:px-10 lg:min-h-[calc(100vh-5rem)] lg:px-14 lg:pb-36">
             <div className="max-w-3xl text-white">
               <div className="mb-7 flex items-center gap-4">
                 <span className="h-px w-12 bg-[#d7ad58]" />
@@ -98,8 +98,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-b border-black/6 bg-[#fbf8f1]">
-          <div className="mx-auto grid max-w-[1380px] grid-cols-1 divide-y divide-black/7 px-5 sm:grid-cols-3 sm:divide-x sm:divide-y-0 md:px-10 lg:px-14">
+        <BookingWidget />
+
+        <section className="border-b border-black/6 bg-[#fbf8f1] pt-16 lg:pt-20">
+          <Reveal className="mx-auto grid max-w-[1380px] grid-cols-1 divide-y divide-black/7 px-5 sm:grid-cols-3 sm:divide-x sm:divide-y-0 md:px-10 lg:px-14">
             {[
               ["01", "Port Harcourt", "In Rumuepirikom, just off Ada George"],
               ["02", "Direct contact", "Speak with the hotel before you arrive"],
@@ -113,11 +115,11 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-[#fbf8f1] py-24 lg:py-32">
-          <div className="mx-auto grid max-w-[1380px] items-center gap-14 px-5 md:px-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-24 lg:px-14">
+          <Reveal className="mx-auto grid max-w-[1380px] items-center gap-14 px-5 md:px-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-24 lg:px-14">
             <div className="relative mx-auto w-full max-w-[560px] pb-10 pr-8">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2px]">
                 <Image src={hotelImages.executive} alt="JAVIN Hotels guest suite" fill sizes="(max-width: 1024px) 90vw, 40vw" className="object-cover" />
@@ -149,11 +151,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-[#efe8dc] py-24 lg:py-32">
-          <div className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
+          <Reveal className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9d752e]">Rooms & suites</p>
@@ -164,8 +166,8 @@ export default function Home() {
 
             <div className="mt-14 grid gap-7 lg:grid-cols-3">
               {roomPreviews.map((room, index) => (
-                <article key={room.title} className={`group ${index === 1 ? "lg:translate-y-10" : ""}`}>
-                  <div className="relative aspect-[4/5] overflow-hidden bg-[#ddd3c4]">
+                <article key={room.title} className={`group transition duration-500 hover:-translate-y-1.5 ${index === 1 ? "lg:translate-y-10" : ""}`}>
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[#ddd3c4] shadow-[0_16px_40px_rgba(50,16,23,0)] transition duration-500 group-hover:shadow-[0_26px_55px_rgba(50,16,23,.22)]">
                     <Image src={room.image} alt={room.title} fill sizes="(max-width: 1024px) 90vw, 30vw" className="object-cover transition duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-7 text-white">
@@ -177,11 +179,11 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section id="facilities" className="scroll-mt-20 overflow-hidden bg-[#fbf8f1] py-24 lg:py-32">
-          <div className="mx-auto grid max-w-[1380px] gap-14 px-5 md:px-10 lg:grid-cols-[.62fr_1.38fr] lg:gap-20 lg:px-14">
+          <Reveal className="mx-auto grid max-w-[1380px] gap-14 px-5 md:px-10 lg:grid-cols-[.62fr_1.38fr] lg:gap-20 lg:px-14">
             <div className="lg:sticky lg:top-32 lg:self-start">
               <div className="flex items-center gap-4">
                 <span className="h-px w-10 bg-[#b3893a]" />
@@ -222,11 +224,11 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-[#2a1815] py-24 text-white lg:py-32">
-          <div className="mx-auto grid max-w-[1380px] items-center gap-14 px-5 md:px-10 lg:grid-cols-2 lg:px-14">
+          <Reveal className="mx-auto grid max-w-[1380px] items-center gap-14 px-5 md:px-10 lg:grid-cols-2 lg:px-14">
             <div className="relative aspect-[5/4] overflow-hidden">
               <Image src={hotelImages.presidential} alt="Space for memorable occasions at JAVIN Hotels" fill sizes="(max-width: 1024px) 90vw, 45vw" className="object-cover" />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/15" />
@@ -242,11 +244,11 @@ export default function Home() {
                 Explore gatherings <span className="material-symbols-outlined text-base">arrow_forward</span>
               </Link>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-[#fbf8f1] py-24 lg:py-32">
-          <div className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
+          <Reveal className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[hotelImages.standard, hotelImages.executive, hotelImages.deluxe, hotelImages.presidential].map((image, index) => (
                 <div key={image} className={`relative overflow-hidden ${index % 2 ? "aspect-[4/5] lg:mt-14" : "aspect-[4/5]"}`}>
@@ -264,13 +266,13 @@ export default function Home() {
                 <a href={site.instagram} target="_blank" rel="noreferrer" className="rounded-full bg-[#5a0c1d] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white">Follow Instagram</a>
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section className="relative overflow-hidden bg-[#640f23] py-24 text-white">
           <div className="absolute -right-24 -top-32 h-96 w-96 rounded-full border border-white/10" />
           <div className="absolute -right-4 -top-12 h-64 w-64 rounded-full border border-white/10" />
-          <div className="relative mx-auto flex max-w-[1050px] flex-col items-center px-5 text-center">
+          <Reveal className="relative mx-auto flex max-w-[1050px] flex-col items-center px-5 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#e4c27c]">Your Port Harcourt stay starts here</p>
             <h2 className="mt-5 font-headline-lg text-[42px] leading-[1.08] md:text-[64px]">Ready when you are.</h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72">Connect directly with JAVIN Hotels for availability, directions or a tailored enquiry.</p>
@@ -278,7 +280,7 @@ export default function Home() {
               <a href={site.whatsapp} target="_blank" rel="noreferrer" className="rounded-full bg-[#d2aa58] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] text-[#2d1813]">Chat on WhatsApp</a>
               <Link href="/contact" className="rounded-full border border-white/30 px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em]">Contact the hotel</Link>
             </div>
-          </div>
+          </Reveal>
         </section>
       </main>
       <Footer />

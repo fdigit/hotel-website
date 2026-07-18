@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 import { hotelImages, whatsappUrl } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Executive Stay" };
@@ -24,7 +25,7 @@ export default function ExecutiveSuitePage() {
           </div>
         </section>
         <section className="py-16 lg:py-24">
-          <div className="mx-auto grid max-w-[1100px] gap-12 px-5 md:px-10 lg:grid-cols-[1fr_.65fr]">
+          <Reveal className="mx-auto grid max-w-[1100px] gap-12 px-5 md:px-10 lg:grid-cols-[1fr_.65fr]">
             <div>
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9d752e]">Room enquiry</p>
               <h2 className="mt-4 font-headline-lg text-[42px] leading-tight text-[#321017] md:text-[54px]">Designed for more time, more ease.</h2>
@@ -36,7 +37,7 @@ export default function ExecutiveSuitePage() {
               <a href={whatsappUrl("Hello JAVIN Hotels, I would like to enquire about an Executive stay. My preferred dates are: ")} target="_blank" rel="noreferrer" className="mt-7 block rounded-full bg-[#5a0c1d] px-6 py-4 text-center text-xs font-extrabold uppercase tracking-[0.14em] text-white">Check availability</a>
               <Link href="/rooms" className="mt-3 block rounded-full border border-[#5a0c1d]/20 px-6 py-4 text-center text-xs font-extrabold uppercase tracking-[0.14em] text-[#5a0c1d]">View all rooms</Link>
             </div>
-          </div>
+          </Reveal>
         </section>
       </main>
       <Footer />

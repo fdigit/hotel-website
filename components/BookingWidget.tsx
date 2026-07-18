@@ -1,10 +1,21 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
+function todayIso() {
+  return new Date().toISOString().split("T")[0];
+}
+
 export default function BookingWidget() {
+  const [checkIn, setCheckIn] = useState("");
+
   return (
-    <section aria-label="Search room availability" className="bg-[#1d1512] px-5 pb-5 pt-[6.25rem] md:px-10 md:pb-6 lg:px-14">
+    <section aria-label="Search room availability" className="relative z-20 -mt-12 px-5 sm:-mt-14 md:px-10 lg:-mt-16 lg:px-14">
       <form
         action="/rooms"
         method="get"
-        className="mx-auto grid max-w-[1380px] grid-cols-2 overflow-hidden border border-white/12 bg-[#281a16] shadow-[0_18px_55px_rgba(0,0,0,.2)] lg:grid-cols-[1fr_1fr_.72fr_auto]"
+        className="mx-auto grid max-w-[1380px] grid-cols-2 overflow-hidden rounded-2xl border border-white/12 bg-[#281a16] shadow-[0_25px_70px_rgba(0,0,0,.35)] lg:grid-cols-[1fr_1fr_.72fr_auto]"
       >
         <label className="min-w-0 border-b border-r border-white/10 px-4 py-5 sm:px-6 lg:border-b-0">
           <span className="flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#d5ad5d] sm:text-[10px]">
@@ -15,6 +26,9 @@ export default function BookingWidget() {
             required
             type="date"
             name="checkIn"
+            min={todayIso()}
+            defaultValue=""
+            onChange={(event) => setCheckIn(event.target.value)}
             aria-label="Check in date"
             className="mt-3 w-full min-w-0 border-0 bg-transparent p-0 text-sm font-semibold text-white outline-none [color-scheme:dark] sm:text-base"
           />
@@ -29,6 +43,7 @@ export default function BookingWidget() {
             required
             type="date"
             name="checkOut"
+            min={checkIn || todayIso()}
             aria-label="Check out date"
             className="mt-3 w-full min-w-0 border-0 bg-transparent p-0 text-sm font-semibold text-white outline-none [color-scheme:dark] sm:text-base"
           />
@@ -62,6 +77,12 @@ export default function BookingWidget() {
           <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
         </button>
       </form>
+      <p className="mx-auto mt-4 max-w-[1380px] text-center text-[11px] text-[#5f5147] sm:text-right">
+        Reservations are confirmed directly by the hotel.{" "}
+        <Link href="/booking-confirmed" className="font-semibold text-[#8a611f] underline underline-offset-2 hover:text-[#5a0c1d]">
+          How booking works
+        </Link>
+      </p>
     </section>
   );
 }

@@ -25,6 +25,7 @@ export default function Header() {
 
   return (
     <header
+      style={{ viewTransitionName: "site-header" }}
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         isScrolled
           ? "border-black/8 bg-[#fbf8f1]/95 shadow-[0_10px_35px_rgba(35,21,12,.08)] backdrop-blur-xl"
@@ -49,7 +50,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[#3e3530] transition hover:text-[#6a1024]"
+              className="nav-underline text-[13px] font-semibold uppercase tracking-[0.16em] text-[#3e3530] transition hover:text-[#6a1024]"
             >
               {item.label}
             </Link>
@@ -80,7 +81,7 @@ export default function Header() {
         <nav
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          className="border-t border-black/5 bg-[#fbf8f1] px-5 py-6 shadow-xl lg:hidden"
+          className="animate-mobile-nav-in border-t border-black/5 bg-[#fbf8f1] px-5 py-6 shadow-xl lg:hidden"
         >
           <div className="mx-auto flex max-w-[1380px] flex-col gap-1">
             {navigation.map((item) => (

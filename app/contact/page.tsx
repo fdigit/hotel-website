@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
 import { hotelImages, site, whatsappUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function ContactPage() {
         <PageHero eyebrow="Contact & directions" title="We are ready to welcome you." description="For room availability, event enquiries or help finding the hotel, connect directly with the JAVIN team." image={hotelImages.standard} imageAlt="Comfortable room at JAVIN Hotels" />
 
         <section className="bg-[#fbf8f1] py-20 lg:py-28">
-          <div className="mx-auto grid max-w-[1380px] gap-14 px-5 md:px-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-24 lg:px-14">
+          <Reveal className="mx-auto grid max-w-[1380px] gap-14 px-5 md:px-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-24 lg:px-14">
             <div>
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9d752e]">Speak with the hotel</p>
               <h2 className="mt-5 font-headline-lg text-[42px] leading-[1.08] text-[#321017] md:text-[58px]">A direct line to JAVIN.</h2>
@@ -57,15 +58,15 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-[#5a0c1d] py-20 text-white">
-          <div className="mx-auto max-w-4xl px-5 text-center">
+          <Reveal className="mx-auto max-w-4xl px-5 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#e1bd70]">Before you arrive</p>
             <h2 className="mt-4 font-headline-lg text-[42px] md:text-[56px]">Let us help make your arrival easy.</h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/72">Message the hotel with your expected arrival time or any questions you would like answered before your stay.</p>
-          </div>
+          </Reveal>
         </section>
       </main>
       <Footer />

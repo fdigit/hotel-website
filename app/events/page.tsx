@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
 import { hotelImages, whatsappUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function EventsPage() {
         <PageHero eyebrow="Meet · Celebrate · Connect" title="Gather, the JAVIN way." description="A thoughtful setting for business conversations, private moments and the occasions worth bringing people together for." image={hotelImages.presidential} imageAlt="Elegant space for a JAVIN Hotels occasion" />
 
         <section className="bg-[#fbf8f1] py-20 lg:py-28">
-          <div className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
+          <Reveal className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
             <div className="grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9d752e]">Your occasion starts with a conversation</p>
@@ -34,7 +35,7 @@ export default function EventsPage() {
               </div>
               <div className="grid gap-5 sm:grid-cols-3">
                 {occasions.map((occasion) => (
-                  <article key={occasion.title} className="border border-black/8 bg-white p-7 shadow-[0_16px_45px_rgba(39,20,12,.05)]">
+                  <article key={occasion.title} className="border border-black/8 bg-white p-7 shadow-[0_16px_45px_rgba(39,20,12,.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_55px_rgba(39,20,12,.1)]">
                     <span className="material-symbols-outlined text-3xl text-[#ae8437]">{occasion.icon}</span>
                     <h3 className="mt-8 font-headline-md text-2xl text-[#321017]">{occasion.title}</h3>
                     <p className="mt-4 text-sm leading-7 text-[#6d625a]">{occasion.copy}</p>
@@ -42,11 +43,11 @@ export default function EventsPage() {
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-[#271714] py-20 text-white lg:py-28">
-          <div className="mx-auto grid max-w-[1380px] items-center gap-12 px-5 md:px-10 lg:grid-cols-2 lg:px-14">
+          <Reveal className="mx-auto grid max-w-[1380px] items-center gap-12 px-5 md:px-10 lg:grid-cols-2 lg:px-14">
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/4] overflow-hidden"><Image src={hotelImages.executive} alt="JAVIN Hotels occasion detail" fill sizes="45vw" className="object-cover" /></div>
               <div className="relative mt-12 aspect-[3/4] overflow-hidden"><Image src={hotelImages.deluxe} alt="JAVIN Hotels hospitality setting" fill sizes="45vw" className="object-cover" /></div>
@@ -60,7 +61,7 @@ export default function EventsPage() {
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
       </main>
       <Footer />
