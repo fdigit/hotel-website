@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingWidget from "@/components/BookingWidget";
+import FacilitiesShowcase from "@/components/FacilitiesShowcase";
 import Reveal from "@/components/Reveal";
 import { hotelImages, site, whatsappUrl } from "@/lib/site";
 
@@ -70,9 +71,9 @@ export default function Home() {
                   Rumuepirikom · Port Harcourt
                 </span>
               </div>
-              <h1 className="font-display-lg text-[clamp(2.65rem,13vw,3.25rem)] font-semibold leading-[1.02] tracking-[-.035em] sm:text-[68px] sm:leading-[.98] lg:text-[86px]">
+              <h1 className="font-display-lg text-[clamp(2.1rem,9.5vw,2.65rem)] font-semibold leading-[1.02] tracking-[-.035em] sm:text-[68px] sm:leading-[.98] lg:text-[86px]">
                 Stay distinctively.
-                <span className="block italic text-[#e4c27c]">Stay JAVIN.</span>
+                <span className="typewriter block italic text-[#e4c27c]">Stay JAVIN.</span>
               </h1>
               <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/80 sm:mt-8 sm:text-base sm:leading-8 md:text-lg">
                 A warm, polished stay in the heart of Port Harcourt—designed for guests who
@@ -204,26 +205,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid border-l border-t border-[#5a0c1d]/10 sm:grid-cols-2 xl:grid-cols-3">
-              {facilities.map((facility, index) => (
-                <article
-                  key={facility.label}
-                  className="group min-h-44 border-b border-r border-[#5a0c1d]/10 bg-white/45 p-6 transition duration-300 hover:bg-[#5a0c1d] md:p-7"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="material-symbols-outlined text-[28px] text-[#aa8033] transition-colors group-hover:text-[#e2bd70]">
-                      {facility.icon}
-                    </span>
-                    <span className="font-headline-md text-sm text-[#b9a891] transition-colors group-hover:text-white/45">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h3 className="mt-9 max-w-[13rem] font-headline-md text-xl leading-snug text-[#321017] transition-colors group-hover:text-white">
-                    {facility.label}
-                  </h3>
-                </article>
-              ))}
-            </div>
+            <FacilitiesShowcase facilities={facilities} />
           </Reveal>
         </section>
 

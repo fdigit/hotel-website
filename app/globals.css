@@ -197,6 +197,41 @@ a, button, input, select, textarea {
   animation: soft-pulse 2.8s ease-in-out infinite;
 }
 
+/* Hero headline typewriter */
+@keyframes typewriter-loop {
+  0%,
+  6% {
+    width: 0;
+  }
+  42% {
+    width: 13ch;
+  }
+  75% {
+    width: 13ch;
+  }
+  96%,
+  100% {
+    width: 0;
+  }
+}
+@keyframes typewriter-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+.typewriter {
+  display: block;
+  width: 13ch;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 2px solid currentColor;
+  animation:
+    typewriter-loop 5s steps(11, end) 0.5s infinite,
+    typewriter-caret 0.75s step-end infinite;
+}
+
 /* Mobile nav open animation */
 @keyframes mobile-nav-in {
   from {
@@ -228,6 +263,16 @@ a, button, input, select, textarea {
 }
 .nav-underline:hover::after {
   right: 0;
+}
+
+.amenities-scroller {
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+}
+
+.amenities-scroller::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 639px) {
@@ -278,6 +323,11 @@ a, button, input, select, textarea {
   .animate-ken-burns,
   .animate-soft-pulse,
   .animate-mobile-nav-in {
+    animation: none !important;
+  }
+  .typewriter {
+    width: auto;
+    border-right: 0;
     animation: none !important;
   }
   ::view-transition-group(*),
