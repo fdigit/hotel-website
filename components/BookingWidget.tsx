@@ -15,9 +15,9 @@ export default function BookingWidget() {
       <form
         action="/rooms"
         method="get"
-        className="mx-auto grid max-w-[1380px] grid-cols-2 overflow-hidden rounded-2xl border border-white/12 bg-[#281a16] shadow-[0_25px_70px_rgba(0,0,0,.35)] lg:grid-cols-[1fr_1fr_.72fr_auto]"
+        className="mx-auto grid max-w-[1380px] grid-cols-1 overflow-hidden rounded-2xl border border-white/12 bg-[#281a16] shadow-[0_25px_70px_rgba(0,0,0,.35)] min-[480px]:grid-cols-2 lg:grid-cols-[1fr_1fr_.72fr_auto]"
       >
-        <label className="min-w-0 border-b border-r border-white/10 px-4 py-5 sm:px-6 lg:border-b-0">
+        <label className="min-w-0 border-b border-white/10 px-4 py-4 min-[480px]:border-r sm:px-6 sm:py-5 lg:border-b-0">
           <span className="flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#d5ad5d] sm:text-[10px]">
             <span className="material-symbols-outlined text-[16px]">calendar_today</span>
             Check In
@@ -34,7 +34,7 @@ export default function BookingWidget() {
           />
         </label>
 
-        <label className="min-w-0 border-b border-white/10 px-4 py-5 sm:px-6 lg:border-b-0 lg:border-r">
+        <label className="min-w-0 border-b border-white/10 px-4 py-4 sm:px-6 sm:py-5 lg:border-b-0 lg:border-r">
           <span className="flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#d5ad5d] sm:text-[10px]">
             <span className="material-symbols-outlined text-[16px]">event_available</span>
             Check Out
@@ -49,7 +49,7 @@ export default function BookingWidget() {
           />
         </label>
 
-        <label className="min-w-0 border-r border-white/10 px-4 py-5 sm:px-6">
+        <label className="min-w-0 border-b border-white/10 px-4 py-4 min-[480px]:border-b-0 min-[480px]:border-r sm:px-6 sm:py-5">
           <span className="flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#d5ad5d] sm:text-[10px]">
             <span className="material-symbols-outlined text-[17px]">group</span>
             Guests
@@ -71,7 +71,7 @@ export default function BookingWidget() {
 
         <button
           type="submit"
-          className="flex min-h-24 items-center justify-center gap-2 bg-[#d0a850] px-4 text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#281711] transition hover:bg-[#e2bd70] sm:px-7 sm:text-xs"
+          className="flex min-h-16 items-center justify-center gap-2 bg-[#d0a850] px-4 py-4 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#281711] transition hover:bg-[#e2bd70] sm:min-h-24 sm:px-7 sm:text-xs sm:tracking-[0.14em]"
         >
           Search Rooms
           <span className="material-symbols-outlined text-[18px]">arrow_forward</span>

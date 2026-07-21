@@ -133,8 +133,16 @@ img, video, iframe, button, input, select, textarea {
   max-width: 100%;
 }
 
-p, a {
-  overflow-wrap: anywhere;
+p, a, button, address, h1, h2, h3 {
+  overflow-wrap: break-word;
+}
+
+a.rounded-full,
+button.rounded-full {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.45;
+  justify-content: center;
 }
 
 a, button, input, select, textarea {
@@ -220,6 +228,16 @@ a, button, input, select, textarea {
 }
 .nav-underline:hover::after {
   right: 0;
+}
+
+@media (max-width: 639px) {
+  .reveal:not(.reveal-visible) {
+    transform: translateY(12px);
+  }
+
+  .animate-ken-burns {
+    animation-name: none;
+  }
 }
 
 /* View Transitions: keep header static, crossfade content */

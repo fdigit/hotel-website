@@ -59,26 +59,26 @@ export default async function RoomsPage({ searchParams }: RoomsPageProps) {
       <main>
         <PageHero eyebrow="Rooms & suites" title="Your space to slow down." description="Explore a collection of comfortable stays, then speak directly with JAVIN Hotels for the best available option for your visit." image={hotelImages.executive} imageAlt="A spacious guest room at JAVIN Hotels" />
 
-        <section className="bg-[#fbf8f1] py-20 lg:py-28">
+        <section className="bg-[#fbf8f1] py-16 sm:py-20 lg:py-28">
           <div className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
             <Reveal className="max-w-3xl">
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9d752e]">Choose your stay</p>
-              <h2 className="mt-4 font-headline-lg text-[40px] leading-tight text-[#321017] md:text-[56px]">Comfort with a sense of place.</h2>
+              <h2 className="mt-4 font-headline-lg text-[36px] leading-tight text-[#321017] sm:text-[40px] md:text-[56px]">Comfort with a sense of place.</h2>
               <p className="mt-6 text-base leading-8 text-[#6a5f57]">Room availability, inclusions and current rates are confirmed directly by the hotel, so every enquiry receives accurate, up-to-date information.</p>
               {hasSearch && (
-                <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#9d752e]/25 bg-[#f4ecdf] px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#76551e]">
+                <p className="mt-6 inline-flex max-w-full items-center gap-2 rounded-2xl border border-[#9d752e]/25 bg-[#f4ecdf] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.1em] text-[#76551e] sm:rounded-full sm:px-5 sm:text-xs sm:tracking-[0.14em]">
                   <span className="material-symbols-outlined text-base">event_available</span>
                   Showing availability {searchNote}
                 </p>
               )}
             </Reveal>
 
-            <div className="mt-16 space-y-16 lg:space-y-24">
+            <div className="mt-12 space-y-14 sm:mt-16 sm:space-y-16 lg:space-y-24">
               {stays.map((room, index) => {
                 const media = (
                   <div className={`relative aspect-[4/3] overflow-hidden bg-[#e7dfd2] ${index % 2 ? "lg:order-2" : ""}`}>
                     <Image src={room.image} alt={room.name} fill sizes="(max-width: 1024px) 90vw, 45vw" className="object-cover transition duration-700 hover:scale-105" />
-                    <span className="absolute left-5 top-5 rounded-full bg-[#fbf8f1]/92 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#5a0c1d] backdrop-blur">JAVIN Hotels</span>
+                    <span className="absolute left-3 top-3 rounded-full bg-[#fbf8f1]/92 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.14em] text-[#5a0c1d] backdrop-blur sm:left-5 sm:top-5 sm:px-4 sm:text-[10px] sm:tracking-[0.18em]">JAVIN Hotels</span>
                   </div>
                 );
 
@@ -88,13 +88,13 @@ export default async function RoomsPage({ searchParams }: RoomsPageProps) {
                       {room.href ? <Link href={room.href} aria-label={`View details for ${room.name}`}>{media}</Link> : media}
                       <div className={index % 2 ? "lg:order-1" : ""}>
                         <p className="font-headline-md text-lg text-[#b1883e]">0{index + 1}</p>
-                        <h3 className="mt-3 font-headline-lg text-[38px] text-[#321017] md:text-[48px]">{room.name}</h3>
+                        <h3 className="mt-3 font-headline-lg text-[34px] leading-tight text-[#321017] sm:text-[38px] md:text-[48px]">{room.name}</h3>
                         <p className="mt-5 max-w-xl text-base leading-8 text-[#6c6159]">{room.note}</p>
                         <ul className="mt-7 grid gap-3 border-y border-black/8 py-6 sm:grid-cols-3">
                           {room.details.map((detail) => <li key={detail} className="flex items-center gap-2 text-xs font-semibold text-[#544a43]"><span className="h-1.5 w-1.5 rounded-full bg-[#b1883e]" />{detail}</li>)}
                         </ul>
-                        <div className="mt-7 flex flex-wrap gap-4">
-                          <a href={whatsappUrl(enquiryMessage(room.name))} target="_blank" rel="noreferrer" className="inline-flex rounded-full bg-[#5a0c1d] px-7 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white transition hover:-translate-y-0.5">Ask about this room</a>
+                        <div className="mt-7 flex flex-col items-stretch gap-4 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:items-center">
+                          <a href={whatsappUrl(enquiryMessage(room.name))} target="_blank" rel="noreferrer" className="inline-flex rounded-full bg-[#5a0c1d] px-6 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 sm:px-7 sm:tracking-[0.14em]">Ask about this room</a>
                           {room.href && (
                             <Link href={room.href} className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.14em] text-[#5a0c1d]">
                               View full details <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -113,7 +113,7 @@ export default async function RoomsPage({ searchParams }: RoomsPageProps) {
         <section className="bg-[#efe8dc] py-20">
           <Reveal className="mx-auto max-w-4xl px-5 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#9d752e]">Need a recommendation?</p>
-            <h2 className="mt-4 font-headline-lg text-[40px] leading-tight text-[#321017] md:text-[54px]">Tell us how you like to stay.</h2>
+            <h2 className="mt-4 font-headline-lg text-[36px] leading-tight text-[#321017] sm:text-[40px] md:text-[54px]">Tell us how you like to stay.</h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#6a5f57]">Share your dates, number of guests and preferences. The hotel team can guide you to the most suitable available option.</p>
             <a href={whatsappUrl("Hello JAVIN Hotels, please help me choose the right room for my stay.")} target="_blank" rel="noreferrer" className="mt-8 inline-flex rounded-full bg-[#5a0c1d] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.15em] text-white">Start an enquiry</a>
           </Reveal>

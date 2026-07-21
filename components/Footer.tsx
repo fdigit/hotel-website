@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="border-b border-white/10">
         <div className="mx-auto grid max-w-[1380px] gap-12 px-5 py-16 md:px-10 lg:grid-cols-[1.3fr_.7fr_.9fr] lg:px-14 lg:py-20">
           <div>
-            <Link href="/" aria-label="JAVIN Hotels Limited home" className="inline-flex items-center gap-4">
-              <BrandLogo className="h-20 w-20" />
+            <Link href="/" aria-label="JAVIN Hotels Limited home" className="inline-flex max-w-full items-center gap-3 sm:gap-4">
+              <BrandLogo className="h-16 w-16 shrink-0 sm:h-20 sm:w-20" />
               <span>
-                <span className="block font-headline-md text-2xl tracking-[0.1em]">JAVIN HOTELS</span>
+                <span className="block font-headline-md text-xl tracking-[0.08em] sm:text-2xl sm:tracking-[0.1em]">JAVIN HOTELS</span>
                 <span className="text-[10px] uppercase tracking-[0.3em] text-[#d4ad60]">Limited</span>
               </span>
             </Link>

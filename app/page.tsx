@@ -50,7 +50,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section className="relative min-h-[760px] overflow-hidden bg-[#211512] lg:min-h-[calc(100vh-5rem)]">
+        <section className="relative min-h-[680px] overflow-hidden bg-[#211512] sm:min-h-[760px] lg:min-h-[calc(100vh-5rem)]">
           <Image
             src={hotelImages.deluxe}
             alt="Refined guest room at JAVIN Hotels"
@@ -62,23 +62,23 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(22,12,10,.88)_0%,rgba(22,12,10,.58)_44%,rgba(22,12,10,.18)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#211512] to-transparent" />
 
-          <div className="relative mx-auto flex min-h-[760px] max-w-[1380px] items-center px-5 pt-20 pb-28 md:px-10 lg:min-h-[calc(100vh-5rem)] lg:px-14 lg:pb-36">
+          <div className="relative mx-auto flex min-h-[680px] max-w-[1380px] items-center px-5 pb-24 pt-24 sm:min-h-[760px] sm:pb-28 md:px-10 lg:min-h-[calc(100vh-5rem)] lg:px-14 lg:pb-36">
             <div className="max-w-3xl text-white">
-              <div className="mb-7 flex items-center gap-4">
-                <span className="h-px w-12 bg-[#d7ad58]" />
-                <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#e4c27c]">
+              <div className="mb-5 flex items-center gap-3 sm:mb-7 sm:gap-4">
+                <span className="h-px w-8 shrink-0 bg-[#d7ad58] sm:w-12" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#e4c27c] sm:text-xs sm:tracking-[0.28em]">
                   Rumuepirikom · Port Harcourt
                 </span>
               </div>
-              <h1 className="font-display-lg text-[52px] font-semibold leading-[.98] tracking-[-.035em] sm:text-[68px] lg:text-[86px]">
+              <h1 className="font-display-lg text-[clamp(2.65rem,13vw,3.25rem)] font-semibold leading-[1.02] tracking-[-.035em] sm:text-[68px] sm:leading-[.98] lg:text-[86px]">
                 Stay distinctively.
                 <span className="block italic text-[#e4c27c]">Stay JAVIN.</span>
               </h1>
-              <p className="mt-8 max-w-xl text-base leading-8 text-white/76 md:text-lg">
+              <p className="mt-6 max-w-xl text-[15px] leading-7 text-white/80 sm:mt-8 sm:text-base sm:leading-8 md:text-lg">
                 A warm, polished stay in the heart of Port Harcourt—designed for guests who
                 value comfort, calm and thoughtful hospitality.
               </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
                 <a
                   href={whatsappUrl("Hello JAVIN Hotels, I would like to check room availability.")}
                   target="_blank"
@@ -118,19 +118,19 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section className="bg-[#fbf8f1] py-24 lg:py-32">
+        <section className="bg-[#fbf8f1] py-16 sm:py-24 lg:py-32">
           <Reveal className="mx-auto grid max-w-[1380px] items-center gap-14 px-5 md:px-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-24 lg:px-14">
-            <div className="relative mx-auto w-full max-w-[560px] pb-10 pr-8">
+            <div className="relative mx-auto w-full max-w-[560px] pb-8 pr-5 sm:pb-10 sm:pr-8">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2px]">
                 <Image src={hotelImages.executive} alt="JAVIN Hotels guest suite" fill sizes="(max-width: 1024px) 90vw, 40vw" className="object-cover" />
               </div>
-              <div className="absolute bottom-0 right-0 w-[48%] border-[10px] border-[#fbf8f1] bg-[#5a0c1d] p-6 text-white shadow-2xl md:p-8">
-                <p className="font-headline-md text-3xl leading-tight">Made for the way you travel.</p>
+              <div className="absolute bottom-0 right-0 w-[62%] border-[6px] border-[#fbf8f1] bg-[#5a0c1d] p-4 text-white shadow-2xl sm:w-[48%] sm:border-[10px] sm:p-6 md:p-8">
+                <p className="font-headline-md text-[22px] leading-tight sm:text-3xl">Made for the way you travel.</p>
               </div>
             </div>
             <div>
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#a47a2f]">The JAVIN welcome</p>
-              <h2 className="mt-5 max-w-xl font-headline-lg text-[42px] leading-[1.08] text-[#321017] md:text-[58px]">
+              <h2 className="mt-5 max-w-xl font-headline-lg text-[36px] leading-[1.1] text-[#321017] sm:text-[42px] md:text-[58px]">
                 A stay that feels considered from the start.
               </h2>
               <p className="mt-7 max-w-xl text-base leading-8 text-[#675c55]">
@@ -154,12 +154,12 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section className="bg-[#efe8dc] py-24 lg:py-32">
+        <section className="bg-[#efe8dc] py-16 sm:py-24 lg:py-32">
           <Reveal className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9d752e]">Rooms & suites</p>
-                <h2 className="mt-4 font-headline-lg text-[42px] leading-tight text-[#321017] md:text-[58px]">Find your kind of stay.</h2>
+                <h2 className="mt-4 font-headline-lg text-[36px] leading-tight text-[#321017] sm:text-[42px] md:text-[58px]">Find your kind of stay.</h2>
               </div>
               <Link href="/rooms" className="w-fit border-b border-[#5a0c1d] pb-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#5a0c1d]">View all rooms</Link>
             </div>
@@ -182,7 +182,7 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section id="facilities" className="scroll-mt-20 overflow-hidden bg-[#fbf8f1] py-24 lg:py-32">
+        <section id="facilities" className="scroll-mt-20 overflow-hidden bg-[#fbf8f1] py-16 sm:py-24 lg:py-32">
           <Reveal className="mx-auto grid max-w-[1380px] gap-14 px-5 md:px-10 lg:grid-cols-[.62fr_1.38fr] lg:gap-20 lg:px-14">
             <div className="lg:sticky lg:top-32 lg:self-start">
               <div className="flex items-center gap-4">
@@ -191,14 +191,14 @@ export default function Home() {
                   Facilities & amenities
                 </p>
               </div>
-              <h2 className="mt-6 font-headline-lg text-[44px] leading-[1.08] text-[#321017] md:text-[58px]">
+              <h2 className="mt-6 font-headline-lg text-[36px] leading-[1.1] text-[#321017] sm:text-[44px] md:text-[58px]">
                 Everything you need, already considered.
               </h2>
               <p className="mt-6 max-w-md text-base leading-8 text-[#6c6159]">
                 From breakfast and dependable connectivity to thoughtful in-room comforts,
                 JAVIN is equipped to make every stay feel easy from arrival to departure.
               </p>
-              <div className="mt-9 inline-flex items-center gap-3 rounded-full border border-[#9d752e]/20 bg-[#f4ecdf] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#76551e]">
+              <div className="mt-9 inline-flex max-w-full items-center gap-2 rounded-full border border-[#9d752e]/20 bg-[#f4ecdf] px-4 py-3 text-[10px] font-bold uppercase tracking-[0.12em] text-[#76551e] sm:gap-3 sm:px-5 sm:tracking-[0.16em]">
                 <span className="material-symbols-outlined text-base">verified</span>
                 Confirmed hotel facilities
               </div>
@@ -227,7 +227,7 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section className="bg-[#2a1815] py-24 text-white lg:py-32">
+        <section className="bg-[#2a1815] py-16 text-white sm:py-24 lg:py-32">
           <Reveal className="mx-auto grid max-w-[1380px] items-center gap-14 px-5 md:px-10 lg:grid-cols-2 lg:px-14">
             <div className="relative aspect-[5/4] overflow-hidden">
               <Image src={hotelImages.presidential} alt="Space for memorable occasions at JAVIN Hotels" fill sizes="(max-width: 1024px) 90vw, 45vw" className="object-cover" />
@@ -235,7 +235,7 @@ export default function Home() {
             </div>
             <div className="lg:pl-10">
               <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#d8b361]">Meet · Dine · Celebrate</p>
-              <h2 className="mt-5 font-headline-lg text-[42px] leading-[1.08] md:text-[58px]">Bring your next occasion to JAVIN.</h2>
+              <h2 className="mt-5 font-headline-lg text-[36px] leading-[1.1] sm:text-[42px] md:text-[58px]">Bring your next occasion to JAVIN.</h2>
               <p className="mt-7 max-w-xl text-base leading-8 text-white/68">
                 Start a conversation about meetings, intimate celebrations and private
                 occasions. Our team will help you explore the right setting for your plans.
@@ -247,7 +247,7 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section className="bg-[#fbf8f1] py-24 lg:py-32">
+        <section className="bg-[#fbf8f1] py-16 sm:py-24 lg:py-32">
           <Reveal className="mx-auto max-w-[1380px] px-5 md:px-10 lg:px-14">
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[hotelImages.standard, hotelImages.executive, hotelImages.deluxe, hotelImages.presidential].map((image, index) => (
@@ -259,9 +259,9 @@ export default function Home() {
             <div className="mt-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#9d752e]">A glimpse inside</p>
-                <h2 className="mt-3 font-headline-lg text-[40px] text-[#321017]">See more of JAVIN.</h2>
+                <h2 className="mt-3 font-headline-lg text-[36px] leading-tight text-[#321017] sm:text-[40px]">See more of JAVIN.</h2>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-col gap-3 min-[430px]:flex-row">
                 <Link href="/gallery" className="rounded-full border border-[#5a0c1d]/20 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#5a0c1d]">View gallery</Link>
                 <a href={site.instagram} target="_blank" rel="noreferrer" className="rounded-full bg-[#5a0c1d] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white">Follow Instagram</a>
               </div>
@@ -269,12 +269,12 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section className="relative overflow-hidden bg-[#640f23] py-24 text-white">
+        <section className="relative overflow-hidden bg-[#640f23] py-16 text-white sm:py-24">
           <div className="absolute -right-24 -top-32 h-96 w-96 rounded-full border border-white/10" />
           <div className="absolute -right-4 -top-12 h-64 w-64 rounded-full border border-white/10" />
           <Reveal className="relative mx-auto flex max-w-[1050px] flex-col items-center px-5 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#e4c27c]">Your Port Harcourt stay starts here</p>
-            <h2 className="mt-5 font-headline-lg text-[42px] leading-[1.08] md:text-[64px]">Ready when you are.</h2>
+            <h2 className="mt-5 font-headline-lg text-[36px] leading-[1.1] sm:text-[42px] md:text-[64px]">Ready when you are.</h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72">Connect directly with JAVIN Hotels for availability, directions or a tailored enquiry.</p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a href={site.whatsapp} target="_blank" rel="noreferrer" className="rounded-full bg-[#d2aa58] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] text-[#2d1813]">Chat on WhatsApp</a>

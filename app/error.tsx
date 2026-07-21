@@ -26,7 +26,7 @@ export default function Error({
         <div className="absolute inset-0 bg-[#2b1715]/60" />
         <section className="relative mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#e0bc70]">Something went wrong</p>
-          <h1 className="mt-5 font-display-lg text-[50px] leading-tight md:text-[72px]">A small hiccup, not a lost stay.</h1>
+          <h1 className="mt-5 font-display-lg text-[40px] leading-tight sm:text-[50px] md:text-[72px]">A small hiccup, not a lost stay.</h1>
           <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-white/72">
             Please try again, or reach the hotel directly if the issue continues.
           </p>
